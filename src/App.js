@@ -8,7 +8,7 @@ const schema = Yup.object().shape({
   nome:Yup.string().required(),
   idade:Yup.number().min(16).required(),
   cpf:Yup.string().required(),
-  matricula:Yup.number.length(9).required(),
+  matricula:Yup.number().length(9).required(),
   curso:Yup.string().required(),
   endereco:Yup.string().required(),
   numero:Yup.number(),
@@ -83,7 +83,7 @@ function App() {
             </div>
             <div>
               <label htmlFor="matricula">Matricula</label>
-              <Field id="matricula" name="matricula" type="text"/>
+              <Field id="matricula" name="matricula" type="number"/>
               {errors.matricula &&(
                 <div>{errors.matricula}</div>
               )}
